@@ -1,0 +1,25 @@
+{% extends 'dashboard/base.html' %} 
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+
+<div class="container">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">{{user.username}} Create Your Notes Here </legend>
+            <button href="" class="btn btn-success" type="submit">
+                <a href="{% url 'display_notes' %}" style="color:white;" > See your notes </a>
+             </button>
+        </fieldset>
+        {{form|crispy}}
+        <div class="form-group">
+            <button href="" class="btn btn-outline-info" type="submit">
+                Create
+            </button>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

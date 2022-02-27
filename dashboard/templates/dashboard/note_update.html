@@ -1,0 +1,18 @@
+{% extends 'dashboard/base.html' %} 
+{% load static %} 
+{% block content %}
+{% load crispy_forms_tags%}
+<div class="container">
+    <form method="POST">
+        {% csrf_token %}
+          <div class="container">
+           <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Updating Note for {{user.username}}</legend>
+        </fieldset>
+           {{form|crispy}}
+        <div class="form-group">
+            <button href="" class="btn btn-outline-info" type="submit">
+                Save upadated note
+            </button>
+</div>
+{% endblock content %}
